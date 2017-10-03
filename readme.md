@@ -5,6 +5,13 @@ automatically as the component mounts, unmounts, and makes new API requests.
 
 ## Config
 
+Edit the config object like so:
+```javascript
+import { config } from 'react-ajax-component';
+
+config.apiMethod = 'GET';
+```
+
 - **apiMethod** _String_ (default: `'POST'`)
   <br>The type of method to fetch the API request.
   
@@ -21,17 +28,21 @@ automatically as the component mounts, unmounts, and makes new API requests.
 
 ## Lifecycle Methods
 
-- **shouldFetchData(** props: _Object_ **): _Boolean_**
-  <br>
+When building out an extended class, here are the methods that you will likely need to edit,
+depending on your needs.
 
-- **resolveData(** props: _Object_ **): _Promise_**
+- **shouldFetchData(** nextProps: _Object_ **): _Boolean_**
+  <br>Used to determine if a new API request should be made. If `shouldFetchData` returns true,
+  the old state of the Component will be mock unmounted and new data will emulate the
+  appearance of a new Component.
+
+- **resolveData(** nextProps: _Object_ **): _Promise_**
   <br>The logic that handles making the API request.
-  <br>_Tip:_ If you are happy with the 
 
-- **apiEndpoint(** props: _Object_ **): _String_**
+- **apiEndpoint(** nextProps: _Object_ **): _String_**
   <br>The url to send API request to.
   
-- **apiPayload(** props: _Object_ **): _Object_**
+- **apiPayload(** nextProps: _Object_ **): _Object_**
   <br>The data to include in the API request.
 
 - **onDataUpdate()**
