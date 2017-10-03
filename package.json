@@ -1,8 +1,12 @@
 {
   "name": "react-ajax-component",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index-es5.js",
   "module": "index.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/btpoe/react-ajax-component.git"
+  },
   "peerDependencies": {
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
