@@ -1,0 +1,46 @@
+# Ajax Component
+
+Ajax Component is an extendable React Component that gives you `enter` and `exit` classes
+automatically as the component mounts, unmounts, and makes new API requests.
+
+## Config
+
+- **apiMethod** _String_ (default: `'POST'`)
+  <br>The type of method to fetch the API request.
+  
+- **apiHeaders** _Object_ (default: `{ 'Content-Type': 'application/json' }`),
+  <br>Headers to include in API requests.
+
+## Props
+
+- **timeout** _Number_ (default: `1000`)
+  <br>Duration to hold the `enter` and `exit` classes.
+
+- **classNamePrefix** _String_ (default: `'is'`)
+  <br>A string to append to the beginning of the `enter` and `exit` classes.
+
+## Lifecycle Methods
+
+- **shouldFetchData(** props: _Object_ **): _Boolean_**
+  <br>
+
+- **resolveData(** props: _Object_ **): _Promise_**
+  <br>The logic that handles making the API request.
+  <br>_Tip:_ If you are happy with the 
+
+- **apiEndpoint(** props: _Object_ **): _String_**
+  <br>The url to send API request to.
+  
+- **apiPayload(** props: _Object_ **): _Object_**
+  <br>The data to include in the API request.
+
+- **onDataUpdate()**
+  <br>A function to be called after each API request has completed.
+
+- **renderError(): _ReactElement | null_**
+  <br>A React render function that will be used in the event of an API error.
+  <br>_Note:_ `this.state.data` will be `null` and `this.state.errors` will be `true`.
+
+- **renderLoader(): _ReactElement | null_**
+  <br>A React render function that will be used before the API has responded.
+  <br>_Note:_ `this.state.data` will be `null` at this point.
