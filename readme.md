@@ -3,6 +3,26 @@
 Ajax Component is an extendable React Component that gives you `enter` and `exit` classes
 automatically as the component mounts, unmounts, and makes new API requests.
 
+## Usage
+
+Install using `npm install react-ajax-component`
+
+Example usage:
+```javascript
+import { createElement } from 'react';
+import AjaxComponent from 'react-ajax-component';
+
+export default class ExampleView extends AjaxComponent {
+    apiEndpoint() {
+        return '/api/get-title'
+    }
+
+    render() {
+        return createElement('div', null, this.state.data.title);
+    }
+}
+```
+
 ## Config
 
 Edit the config object like so:
